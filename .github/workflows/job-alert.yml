@@ -1,0 +1,30 @@
+name: Job Alert Bot
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # runs every 30 minutes
+  workflow_dispatch:        # allows manual run
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run job alert bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
+        run: |
+          python main.py
