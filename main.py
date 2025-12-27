@@ -3,6 +3,11 @@ from job_filters import is_relevant
 from storage import is_new
 from notifier import notify
 
+from notifier import notify
+notify("✅ CI/CD is running successfully. Bot is alive.")
+
+
+
 def run():
     jobs = scrape_jobs()
     print("Total jobs found:", len(jobs))
