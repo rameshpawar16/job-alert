@@ -2,8 +2,8 @@ import os
 import asyncio
 from telegram import Bot
 
-BOT_TOKEN = os.getenv("8016462484:AAGSm9Aw73VrvC3BGnVC_XX60evEMuUJ2-U")
-CHANNEL = os.getenv("@ai_ds_job_updates")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHANNEL = os.getenv("CHANNEL_NAME")
 
 async def send_message(text):
     bot = Bot(token=BOT_TOKEN)
