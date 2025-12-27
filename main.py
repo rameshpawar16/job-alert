@@ -2,6 +2,10 @@ from scraper import scrape_jobs
 from job_filters import is_relevant
 from storage import is_new
 from notifier import notify
+import os
+
+BOT_TOKEN = os.getenv("8016462484:AAGSm9Aw73VrvC3BGnVC_XX60evEMuUJ2-U")
+CHANNEL = os.getenv("@ai_ds_job_updates")
 
 def run():
     # Heartbeat (confirms CI/CD + Telegram)
